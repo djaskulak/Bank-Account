@@ -2,13 +2,13 @@
 """ by Danika Jaskulak-Gonzalez """
 
 # define bank account class
-  """ methods needed: 
-      * deposit(balance and amount)
-      * withdraw(balance and amount)
-      * get_balance(print and return)
-      * add_interest(interest = balance *  0.00083)
-      * print_receipt(name, account number, routing number, balance)
-  """
+""" methods needed: 
+    * deposit(balance and amount)
+    * withdraw(balance and amount)
+    * get_balance(print and return)
+    * add_interest(interest = balance *  0.00083)
+    * print_receipt(name, account number, routing number, balance)
+"""
 
 
 ####### Bank Account class #######
@@ -28,11 +28,17 @@ class BankAccount:
     # adding amount to the balance
     self.balance = self.balance + amount;
     # print statement updating the balance
-    print(f"The amount of ${amount} was deposited into your account. Your new balance is {self.balance}.")
+    print(f"The amount of ${amount} was deposited into your account. Your new balance is ${self.balance}.");
 
   # method for withdrawing money from the account
   def withdraw(self, amount):
 
+    # make sure amount is less than the balance
+    if self.balance < amount:
+      print(f"Unable to complete request due to insufficient funds. Account balance: ${self.balance}")
+    else:
+      self.balance = self.balance - amount;
+      print(f"The amount ${amount} was withdrawn from your account. Your new balance is ${self.balance}")
 
   # method for getting the balance of the account
   def get_balance(self, balance):
