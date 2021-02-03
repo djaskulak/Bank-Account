@@ -9,10 +9,43 @@
       * add_interest(interest = balance *  0.00083)
       * print_receipt(name, account number, routing number, balance)
   """
+
+
+####### Bank Account class #######
 class BankAccount:
 
+  # initializing details of account
   def __init__(self, name, account_num, routing_num, balance):
-    
+    self.name = name;
+
+    self.account_num = account_num;
+    self.routing_num = routing_num;
+
+    self.balance = 0;
+
+  # method for depositing money into the account
+  def deposit(self, amount):
+    # adding amount to the balance
+    self.balance = self.balance + amount;
+    # print statement updating the balance
+    print(f"The amount of ${amount} was deposited into your account. Your new balance is {self.balance}.")
+
+  # method for withdrawing money from the account
+  def withdraw(self, amount):
+
+
+  # method for getting the balance of the account
+  def get_balance(self, balance):
+
+
+  # method for adding monthly interest to the account
+  def add_interest(self, balance):
+
+
+  # method for printing a receipt with everything
+  def print_receipt(self):
+
+####### End of Bank Account class ####### 
 
 # make 3 different bank accounts
 
