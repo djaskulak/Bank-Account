@@ -21,7 +21,7 @@ class BankAccount:
     self.account_num = account_num;
     self.routing_num = routing_num;
 
-    self.balance = 0;
+    self.balance = 0.0;
 
   # method for depositing money into the account
   def deposit(self, amount):
@@ -35,14 +35,17 @@ class BankAccount:
 
     # make sure amount is less than the balance
     if self.balance < amount:
-      print(f"Unable to complete request due to insufficient funds. Account balance: ${self.balance}")
+      print(f"Unable to complete request due to insufficient funds. Account balance: ${self.balance}");
     else:
       self.balance = self.balance - amount;
-      print(f"The amount ${amount} was withdrawn from your account. Your new balance is ${self.balance}")
+      print(f"The amount ${amount} was withdrawn from your account. Your new balance is ${self.balance}");
 
-  # method for getting the balance of the account
+  # method for getting the balance of the account, must return current balance
   def get_balance(self, balance):
-
+    # storing the balance into a variable that will be returned
+    balance = self.balance;
+    print(f"Your account has a current balance of ${balance}");
+    return balance;
 
   # method for adding monthly interest to the account
   def add_interest(self, balance):
