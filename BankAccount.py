@@ -92,6 +92,28 @@ class BankAccount:
 
 ####### Start of 3 Accounts #######
 
+# Dua Lipa
+Dua_Lipa = BankAccount("Dua Lipa", AccountNum(), RoutNum(), 5000000) 
+Dua_Lipa.withdraw(500)
+Dua_Lipa.deposit(250)
+Dua_Lipa.get_balance(1)
+Dua_Lipa.add_interest(1)
+Dua_Lipa.print_receipt()
 
+# Emma Watson
+Emma_Watson = BankAccount("Emma Watson", AccountNum(), RoutNum(), 5000000) 
+Emma_Watson.withdraw(500)
+Emma_Watson.deposit(250)
+Emma_Watson.get_balance(1)
+Emma_Watson.add_interest(1)
+Emma_Watson.print_receipt()
+
+# Ariana Grande
+Ariana_Grande = BankAccount("Ariana Grande", AccountNum(), RoutNum(), 5000000) 
+Ariana_Grande.withdraw(500)
+Ariana_Grande.deposit(250)
+Ariana_Grande.get_balance(1)
+Ariana_Grande.add_interest(1)
+Ariana_Grande.print_receipt()
 
 """ STRETCH CHALLENGE: make terminal ATM, with charge for use """
