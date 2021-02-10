@@ -49,7 +49,9 @@ class BankAccount:
 
   # method for adding monthly interest to the account
   def add_interest(self, balance):
-
+    #rounding the balance after interest
+    self.balance = round(self.balance * 1.00083, 2)
+      print(f"After interest, your balance is {self.balance}.")
 
   # method for printing a receipt with everything
   def print_receipt(self):
