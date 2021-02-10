@@ -48,7 +48,6 @@ class BankAccount:
 
   # method for withdrawing money from the account
   def withdraw(self, amount):
-
     # make sure amount is less than the balance
     if self.balance < amount:
       print(f"Unable to complete request due to insufficient funds. Account balance: ${self.balance}");
@@ -125,7 +124,6 @@ def atmMachine():
 
     if action == str(1):
         print(Dua_Lipa.print_receipt())
-
     elif action == str(2):
         deposit = input("Deposit amount:")
         Dua_Lipa.deposit(int(deposit))
@@ -135,6 +133,6 @@ def atmMachine():
         Dua_Lipa.withdraw(int(withdraw))
         print(Dua_Lipa.balance)
     else:
-            print("Please choose an offered option: (1) Get balance, (2) Deposit (3) Withdraw")
+        print("Please choose an offered option: (1) Get balance, (2) Deposit (3) Withdraw")
 
 atmMachine()
