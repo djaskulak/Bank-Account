@@ -73,20 +73,20 @@ class BankAccount:
   def print_receipt(self):
     name = self.name
     balance = self.balance
-    account_number = self.account_number
+    account_num = self.account_num
 
     # we need the account number to be a list 
-    account_number = [int(x) for x in str(self.account_number)] 
+    account_num = [int(x) for x in str(self.account_num)] 
 
     # making the account number only show up as the last 4 digits
     for i in range(4):
-        account_number[i] ="*"
+        account_num[i] ="*"
 
     # combining what's left of the account number with the stars
-    account_number = ''.join([str(elem) for elem in account_number])
+    account_number = ''.join([str(elem) for elem in account_num])
 
     print(f"Your Receipt: {name}")
-    print(f"Account Number: {account_number}, {balance}")
+    print(f"Account Number: {account_num}, {balance}")
     print(f"Balance: {balance}")
 ####### End of Bank Account class ####### 
 
@@ -116,4 +116,25 @@ Ariana_Grande.get_balance(1)
 Ariana_Grande.add_interest(1)
 Ariana_Grande.print_receipt()
 
+####### End of 3 Accounts #######
+
 """ STRETCH CHALLENGE: make terminal ATM, with charge for use """
+def atmMachine():
+    print("Feminist Union ATM")
+    action = input("Options: (1) Get balance, (2) Deposit (3) Withdraw")
+
+    if action == str(1):
+        print(Dua_Lipa.print_receipt())
+
+    elif action == str(2):
+        deposit = input("Deposit amount:")
+        Dua_Lipa.deposit(int(deposit))
+        print(Dua_Lipa.balance)
+    elif action == str(3):
+        withdraw = input("Withdraw amount:")
+        Dua_Lipa.withdraw(int(withdraw))
+        print(Dua_Lipa.balance)
+    else:
+            print("Please choose an offered option: (1) Get balance, (2) Deposit (3) Withdraw")
+
+atmMachine()
