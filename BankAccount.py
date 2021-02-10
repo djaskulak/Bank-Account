@@ -12,7 +12,6 @@
 
 # Import random to make random account numbers
 from random import randint
-routing_number = 1234567
 
 ####### Make Random Account Numbers #######
 def AccountNum():
@@ -20,6 +19,13 @@ def AccountNum():
         for i in range(8):
             account_num +=str(randint(0,9))
         return int(account_num)
+
+####### Make Random Routing Number #######
+def RoutNum():
+        routing_num = ""
+        for i in range(8):
+            routing_num +=str(randint(0,9))
+        return int(routing_num)
 
 ####### Bank Account class #######
 class BankAccount:
@@ -85,6 +91,7 @@ class BankAccount:
 ####### End of Bank Account class ####### 
 
 ####### Start of 3 Accounts #######
+
 
 
 """ STRETCH CHALLENGE: make terminal ATM, with charge for use """
