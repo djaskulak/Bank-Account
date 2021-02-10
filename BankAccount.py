@@ -10,6 +10,16 @@
     * print_receipt(name, account number, routing number, balance)
 """
 
+# Import random to make random account numbers
+from random import randint
+routing_number = 1234567
+
+####### Make Random Account Numbers #######
+def AccountNum():
+        account_num = ""
+        for i in range(8):
+            account_num +=str(randint(0,9))
+        return int(account_num)
 
 ####### Bank Account class #######
 class BankAccount:
@@ -51,13 +61,30 @@ class BankAccount:
   def add_interest(self, balance):
     #rounding the balance after interest
     self.balance = round(self.balance * 1.00083, 2)
-      print(f"After interest, your balance is {self.balance}.")
+    print(f"After interest, your balance is {self.balance}.")
 
   # method for printing a receipt with everything
   def print_receipt(self):
+    name = self.name
+    balance = self.balance
+    account_number = self.account_number
 
+    # we need the account number to be a list 
+    account_number = [int(x) for x in str(self.account_number)] 
+
+    # making the account number only show up as the last 4 digits
+    for i in range(4):
+        account_number[i] ="*"
+
+    # combining what's left of the account number with the stars
+    account_number = ''.join([str(elem) for elem in account_number])
+
+    print(f"Your Receipt: {name}")
+    print(f"Account Number: {account_number}, {balance}")
+    print(f"Balance: {balance}")
 ####### End of Bank Account class ####### 
 
-# make 3 different bank accounts
+####### Start of 3 Accounts #######
+
 
 """ STRETCH CHALLENGE: make terminal ATM, with charge for use """
